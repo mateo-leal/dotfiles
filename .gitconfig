@@ -1,0 +1,40 @@
+[user]
+	name = Mateo Leal
+	email = mateolegi@gmail.com
+[core]
+	editor = code --wait
+	# autocrlf = true
+	excludesfile = $HOME/.gitignore
+	# safecrlf = true
+[alias]
+	i = init
+	a = add
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	f = fetch --all --prune
+	ap = add --patch
+	ci = commit -m
+	ca = commit -am
+	co = checkout
+	nb = checkout -b
+	cp = cherry-pick
+	d = diff
+	dc = diff --cached
+	last = log -1 HEAD
+	pl = pull origin
+	ps = push origin
+	cpc = cherry-pick --continue
+	cpa = cherry-pick --abort
+	s = status
+	ss = stash
+	sl = stash list
+	sa = stash apply
+	sd = stash drop
+	bl = branch
+	bd = branch -d
+	t = tag
+[diff]
+  tool = default-difftool
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[credential]
+	helper = cache

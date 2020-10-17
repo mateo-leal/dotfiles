@@ -1,0 +1,6 @@
+
+###-tns-completion-start-###
+if [ -f /home/mateoleal/.tnsrc ]; then 
+    source /home/mateoleal/.tnsrc 
+fi
+###-tns-completion-end-###
