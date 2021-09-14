@@ -1,38 +1,49 @@
 [user]
 	name = Mateo Leal
 	email = mateolegi@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+[color "branch"]
+	current = green
+	remote = yellow
 [core]
 	editor = code --wait
 	# autocrlf = true
 	excludesfile = $HOME/.gitignore
 	# safecrlf = true
 [alias]
-	i = init
 	a = add
-	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	f = fetch --all --prune
 	ap = add --patch
-	ci = commit -m
+	bd = branch -d
+	bl = branch
 	ca = commit -am
+	ci = commit -m
 	co = checkout
-	nb = checkout -b
 	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
 	d = diff
 	dc = diff --cached
+	dt = difftool
+	f = fetch --all --prune
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	i = init
 	last = log -1 HEAD
+	local-prune = branch --merged master | grep -v '^[ *]*master$' | grep -v '^[ *]*main$' | xargs git branch -d
+	nb = checkout -b
 	pl = pull origin
 	ps = push origin
-	cpc = cherry-pick --continue
-	cpa = cherry-pick --abort
-	s = status
-	ss = stash
-	sl = stash list
+	s = status -sb
 	sa = stash apply
 	sd = stash drop
-	bl = branch
-	bd = branch -d
+	sl = stash list
+	ss = stash
+	st = status
 	t = tag
-	local-prune = git branch --merged master | grep -v '^[ *]*master$' | grep -v '^[ *]*main$' | xargs git branch -d
 [diff]
 	tool = default-difftool
 [difftool "default-difftool"]
