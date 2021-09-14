@@ -32,9 +32,10 @@
 	bl = branch
 	bd = branch -d
 	t = tag
+	local-prune = git branch --merged master | grep -v '^[ *]*master$' | grep -v '^[ *]*main$' | xargs git branch -d
 [diff]
-  tool = default-difftool
+	tool = default-difftool
 [difftool "default-difftool"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = code --wait --diff $LOCAL $REMOTE
 [credential]
 	helper = cache
